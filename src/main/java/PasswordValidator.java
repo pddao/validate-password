@@ -44,7 +44,7 @@ public class PasswordValidator {
         for (int i = 0; i < input.length(); i++) {
             if (Character.isUpperCase(input.charAt(i))) {
                 isUpper = true;
-            } else if (Character.isLowerCase(input.charAt(i))){
+            } else if (Character.isLowerCase(input.charAt(i))) {
 
                 isLower = true;
             }
@@ -52,11 +52,26 @@ public class PasswordValidator {
 
         if (isUpper == true && isLower == true) {
             return true;
-        }
-
-        else {
+        } else {
             return false;
         }
 
     }
+
+    public static boolean checkListOfPasswords(String input) {
+        boolean valPass = checkPasswordLength(input);
+        if (valPass == true) {
+            valPass = checkPasswordForNumbers(input);
+            if (valPass == true) {
+                valPass = checkForUpperOrLowerCase(input);
+            } else {
+                return valPass;
+            }
+        } else {
+            return valPass;
+        }
+
+        return valPass;
+    }
+
 }
