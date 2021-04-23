@@ -21,7 +21,6 @@ public class PasswordValidator {
 
     public static boolean checkPasswordLength(String input) {
         if (input.length() < 6) {
-            System.out.println("Entered password was too short!");
             return false;
         } else {
             return true;
