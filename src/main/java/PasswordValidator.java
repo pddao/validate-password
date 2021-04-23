@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.util.Scanner;
 
 public class PasswordValidator {
@@ -9,7 +10,12 @@ public class PasswordValidator {
         boolean hasMinimumLength = checkPasswordLength(input);
         boolean hasNumbersInPassword = checkPasswordForNumbers(input);
 
-        System.out.println(hasNumbersInPassword);
+        if (hasNumbersInPassword == true){
+            System.out.println("Entered Pasword was correct!");
+        }
+        else{
+            System.out.println("No number in Password!");
+        }
     }
 
     public static boolean checkPasswordLength(String input){
@@ -23,8 +29,12 @@ public class PasswordValidator {
     }
 
     public static boolean checkPasswordForNumbers(String input){
-        for (int i=0; i < input.length(); i++){
-
+        boolean isNumeric=false;
+            for (int i = 0; i < input.length(); i++) {
+            if (Character.isDigit(input.charAt(i))) {
+                isNumeric = true;
+            }
         }
+        return isNumeric;
     }
 }
