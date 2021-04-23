@@ -34,4 +34,22 @@ public class PasswordValidatorTest {
         assertTrue(containsNumbers);
     }
 
+    @Test
+    @DisplayName("Checking if password contains uppercase and lowercase")
+
+    public void checkForUpperLower (){
+
+        //GIVEN
+        String input = "Hallo123";
+
+        //WHEN
+        boolean containsUpperOrLowerCase = PasswordValidator.checkForUpperOrLowerCase(input);
+
+        //THEN
+        assertTrue(containsUpperOrLowerCase);
+
+    }
+
+
+
 }
