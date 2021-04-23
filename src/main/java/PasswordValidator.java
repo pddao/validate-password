@@ -10,8 +10,9 @@ public class PasswordValidator {
         boolean hasMinimumLength = checkPasswordLength(input);
         boolean hasNumbersInPassword = checkPasswordForNumbers(input);
         boolean hasUpperOrLower = checkForUpperOrLowerCase(input);
+        boolean haseverything = checkListOfPasswords(input);
 
-        if (hasNumbersInPassword == true && hasUpperOrLower == true && hasMinimumLength == true) {
+        if (haseverything == true) {
             System.out.println("Entered password was correct!");
         } else {
             System.out.println("No valid password!");
