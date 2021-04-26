@@ -67,7 +67,7 @@ public class PasswordValidator {
     }
 
     //Überprüfung alle Richtlinien
-    public static boolean checkListOfPasswords(String input) {
+    public static boolean checkPassword(String input) {
         //Überprüfung erster Richtlinie (Länge des Passworts)
         boolean valPass = checkPasswordLength(input);
         //Nur wenn die erste Richtlinie korrekt ist geht es hier weiter. Sonst Zeile 88
@@ -91,4 +91,13 @@ public class PasswordValidator {
         return valPass;
     }
 
+    public static boolean checkListOfPasswords(String[] passwords){
+        for (String password : passwords) {
+            boolean valPass2 = checkPassword(password);
+            if (!valPass2) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
